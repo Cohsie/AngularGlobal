@@ -9,16 +9,16 @@ import { Personaje } from '../../interfaces/personaje.interface';
 })
 export class AddPersonajeComponent {
   @Output()
-  public onNewPersonaje: EventEmitter<Personaje>=new EventEmitter();
+  public onNewPersonaje: EventEmitter<Personaje>=new EventEmitter();//Aquí se crea un EventEmitter de nombre "Personaje"
 
 
-  public personaje:Personaje={
+  public personaje:Personaje={//Estos son los datos del "Personaje"
     nombre: '',
     fuerza: 0
   };
 
   // Creacion del metodo
-  public addPersonaje():void{
+  public addPersonaje():void{ //Y este es el método que lo crea
     console.log(this.personaje);
 
     this.onNewPersonaje.emit(this.personaje)

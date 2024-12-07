@@ -22,4 +22,9 @@ public onNewPersonaje(personaje:Personaje):void{
   console.log(personaje)
 }
 
+public onDeletePersonaje(personaje:Personaje):void{
+  console.log('Delete personaje')
+  console.log(personaje)
+}
+
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Personaje } from '../../interfaces/personaje.interface';
 
 
@@ -11,11 +11,15 @@ import { Personaje } from '../../interfaces/personaje.interface';
 export class ListaComponent {
   @Input()
   public listaPersonajes:Personaje[]=[{
-    nombre: 'Tenshian',
-    fuerza: 1600
-  },{
-    nombre:"Cojan",
-    fuerza:100000
+    nombre: '',
+    fuerza: 0
   }]
+
+  @Output()
+  public onDeletePersonaje: EventEmitter<Personaje>=new EventEmitter();
+
+  public deletePersonaje():void{
+    this.listaPersonajes.splice(0, 1);
+  }
 
 }
