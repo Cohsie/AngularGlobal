@@ -4,17 +4,17 @@ import { Personaje } from '../../interfaces/personaje.interface';
 
 @Component({
   selector: 'dbz-lista',
-  standalone:false,
+  standalone: false,
   templateUrl: './lista.component.html',
   styleUrl: './lista.component.css'
 })
 export class ListaComponent {
   @Input()
   public listaPersonajes:Personaje[]=[{
-    nombre: 'Tenshian',
+    nombre: 'Tenshinhan',
     fuerza: 1600
   },{
-    nombre:"Cojan",
+    nombre:"Gohan",
     fuerza:100000
   }]
 

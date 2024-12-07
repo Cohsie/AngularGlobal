@@ -12,9 +12,15 @@
     'list-group-item-secondary': esPar,
     'list-group-item-danger': esUltimo,
     }">
-    <span>{{ personaje.nombre }} - </span>
-    <strong>Fuerza: </strong>
-    <span> {{ personaje.fuerza }} </span>
-    <span> Indice: {{ i+1}} - Espar: {{esPar}} - Es el ultimo: {{esUltimo}}</span>
+
+    <div>
+      <span class="text-primary">{{ i + 1 }}</span>
+      <span>{{ personaje.nombre }} - </span>
+      <strong>Fuerza: </strong>
+      <span> {{ personaje.fuerza }} </span>
+      <span> Indice: {{ i+1}} - Espar: {{esPar}} - Es el ultimo: {{esUltimo}}</span>
+    </div>
+
+    <button class="btn btn-danger">X</button>
   </li>
 </ul>
