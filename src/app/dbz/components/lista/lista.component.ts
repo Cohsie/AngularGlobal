@@ -16,10 +16,10 @@ export class ListaComponent {
   }]
 
   @Output()//El output lo hace desde main-page.components.html
-  public onDeletePersonaje: EventEmitter<number>=new EventEmitter();
+  public onDeletePersonaje: EventEmitter<string>=new EventEmitter();
 
-  public deletePersonaje(indice:number):void{
-    this.onDeletePersonaje.emit(indice);
+  public deletePersonaje(id:string):void{
+    this.onDeletePersonaje.emit(id);
   }
 
 }
