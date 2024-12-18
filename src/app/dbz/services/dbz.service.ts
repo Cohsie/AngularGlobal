@@ -16,7 +16,7 @@ export class DbzService { //Aquí poner el nombre del servicio
   }];
 
   public onNewPersonaje(personaje:Personaje):void{
-    const newPersonaje: Personaje = {id: uuid(),...personaje}
+    const newPersonaje: Personaje = {...personaje}
     this.personajes.push(newPersonaje)
   }
 
@@ -26,10 +26,9 @@ export class DbzService { //Aquí poner el nombre del servicio
     console.log(eliminado)
   }*/
 
-    public onDeletePersonaje(id:string) {
-      this.personajes = this.personajes.filter(personaje => personaje.id !== id);
+  public onDeletePersonaje(id:string) {
+    this.personajes = this.personajes.filter(personaje => personaje.id !== id);
+    console.log(id);
 
-      console.log(id);
-
-    }
+  }
 }

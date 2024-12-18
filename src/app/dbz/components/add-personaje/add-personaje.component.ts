@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Personaje } from '../../interfaces/personaje.interface';
-
+import {v4 as uuid} from 'uuid';
 @Component({
   selector: 'dbz-add-personaje',
   standalone:false,
@@ -13,6 +13,7 @@ export class AddPersonajeComponent {
 
 
   public personaje:Personaje={//Estos son los datos del "Personaje"
+    id: uuid(),
     nombre: '',
     fuerza: 0
   };
@@ -24,6 +25,7 @@ export class AddPersonajeComponent {
     this.onNewPersonaje.emit(this.personaje)
 
     // Inicializamos los valores
+    this.personaje.id = uuid();
     this.personaje.nombre = '';
     this.personaje.fuerza = 0;
   }

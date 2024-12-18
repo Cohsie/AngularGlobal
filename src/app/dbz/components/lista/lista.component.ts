@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Personaje } from '../../interfaces/personaje.interface';
-
+import {v4 as uuid} from 'uuid';1
 
 @Component({
   selector: 'dbz-lista',
@@ -11,6 +11,7 @@ import { Personaje } from '../../interfaces/personaje.interface';
 export class ListaComponent {
   @Input()//El input lo hace desde main-page.components.ts
   public listaPersonajes:Personaje[]=[{
+    id: uuid(),
     nombre: '',
     fuerza: 0
   }]
