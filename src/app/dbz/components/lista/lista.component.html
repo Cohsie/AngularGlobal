@@ -1,0 +1,24 @@
+<h1>Lista Personajes</h1>
+<hr>
+
+<h4>Listado</h4>
+<ul class="list-group">
+  <li *ngFor="let personaje of listaPersonajes;
+  let i=index;let esPar=even; let esUltimo=last;
+  let esPrimero=first"
+  class="list-group-item d-flex justify-content-between align-items-center"
+  [ngClass]="{
+    'list-group-item-primary': esPrimero,
+    'list-group-item-secondary': esPar,
+    'list-group-item-danger': esUltimo,
+    }">
+    <div>
+      <span class="text-primary">{{ i + 1 }}</span>
+      <span>{{ personaje.nombre }} - </span>
+      <strong>Fuerza: </strong>
+      <span> {{ personaje.fuerza }} </span>
+      <span> Indice: {{ i+1}} - Espar: {{esPar}} - Es el ultimo: {{esUltimo}}</span>
+    </div>
+    <button (click)="deletePersonaje(i)" class="btn btn-danger">X</button><!--Si aquí pongo un onclick las listas que aparecen en el código no se muestran en la página-->
+  </li>
+</ul>
